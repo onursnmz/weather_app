@@ -26,6 +26,7 @@
     background: purple;
     border-radius: 20px;
     padding: 20px;
+    color: #fff;
   }
 
   .search-box {
@@ -79,5 +80,37 @@
     color: #fff;
     padding: 0 40px 0 5px;
     cursor: pointer;
+  }
+
+  .weather-box {
+
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .weather-box img {
+
+    width: 60%;
+  }
+
+  .weather-box .temperature {
+
+    position: relative;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 20px 0 6px -30px;
+  }
+
+  .weather-box .temperature span {
+
+    position: absolute;
+    font-size: 24px;
+    margin-left: 4px;
+  }
+
+  .weather-box .description {
+
+    font-size: 22px;
   }
 
