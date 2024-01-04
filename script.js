@@ -13,13 +13,43 @@ search.addEventListener('click' , () => {
 
         return;
     
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIkey}').then(response => response.json()).then(json =>{
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&
+    appid=${APIkey}`).then(response => response.json()).then(json =>{
 
-        const image = document.querySelector('.weather-box img');
+        const image = document.querySelector('.weather-box .img');
         const temperature = document.querySelector('.weather-box .temperature');
         const description = document.querySelector('.weather-box .description');
         const humidity = document.querySelector('.weather-details .humidity');
         const wind = document.querySelector('.weather-details .wind span');
+
+        switch (json.weather[0].main) {
+            case 'Clear':
+                image.src = 'img/clear.png';
+                break;
+
+            case 'Rain':
+                image.src = 'img/rain.png';
+                break;
+
+            case 'Snow':
+                image.src = 'img/snow.png';
+                break;
+
+            case 'Clouds':
+                image.src = 'img/cloud.png';
+                break;
+
+            case 'Mist':
+                image.src = 'img/mist.png';
+                break;
+
+            case 'Haze':
+                image.src = 'img/mist.png';
+                break;
+        
+            default:
+                image.src = 'img/cloud.png';
+        }
         
     });
 });
